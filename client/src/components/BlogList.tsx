@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { BlogPost } from "./types/types";
 
 export const BlogList: React.FC = () => {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [posts, setPosts] = React.useState<BlogPost[]>([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     axios.get("/posts").then((response) => {
       setPosts(response.data);
     });
