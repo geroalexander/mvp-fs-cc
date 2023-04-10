@@ -5,7 +5,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/posts" Component={BlogList} />
+        <Route path="/" Component={BlogList} />
         {/* <Route path="/posts/new" component={} /> */}
         {/* <Route path="/posts/:id" component={} /> */}
       </Routes>
