@@ -5,7 +5,7 @@ const router = express.Router();
 let posts: BlogPost[] = [];
 
 // Create a new blog post
-router.post("/posts", (req: Request, res: Response) => {
+router.post("/posts/new", (req: Request, res: Response) => {
   const { title, body } = req.body;
   const timestamp = Date.now();
   const id = Math.floor(Math.random() * 1000000).toString();
