@@ -10,8 +10,7 @@
   "author": "geroalexnader",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.22",
-    "uuid": "^9.0.0"
+    "nodemon": "^2.0.22"
   },
   "dependencies": {
     "@types/express": "^4.17.17",
