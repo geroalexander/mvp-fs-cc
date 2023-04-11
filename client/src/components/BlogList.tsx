@@ -9,7 +9,7 @@ export const BlogList: React.FC = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/posts");
+        const response = await fetch("http://localhost:5000/posts");
         const data = await response.json();
         setPosts(data);
       } catch (error) {

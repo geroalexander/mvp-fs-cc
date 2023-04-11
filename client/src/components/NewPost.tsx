@@ -9,7 +9,7 @@ export const NewPost: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/posts/new", {
+      const response = await fetch("http://localhost:5000/posts/new", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

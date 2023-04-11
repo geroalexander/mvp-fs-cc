@@ -20,7 +20,7 @@ export const BlogItem: React.FC = () => {
   React.useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/posts/${id}`);
+        const response = await fetch(`http://localhost:5000/posts/${id}`);
         const post = await response.json();
         setPost(post);
       } catch (error) {

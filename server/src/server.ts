@@ -17,7 +17,7 @@ router.post("/posts/new", createNewPost);
 app.use(router);
 
 // Start the server
-const port = 3000;
+const port = 5000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
