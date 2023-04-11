@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BlogPost } from "./types/types";
-import { BlogItem } from "./BlogItem";
+import { Post } from "./BlogItem";
 
 export const BlogList: React.FC = () => {
   const [posts, setPosts] = React.useState<BlogPost[]>([]);
@@ -31,7 +31,11 @@ export const BlogList: React.FC = () => {
     return (
       <>
         {posts.map((post) => (
-          <BlogItem key={post.id} {...post} />
+          <div key={post.id}>
+            <Link to={`/posts/${post.id}`}>
+              <Post {...post} />
+            </Link>
+          </div>
         ))}
       </>
     );
