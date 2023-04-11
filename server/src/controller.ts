@@ -13,9 +13,9 @@ export const createNewPost = async (req: Request, res: Response) => {
   const { title, body } = req.body;
   const timestamp = Date.now();
   const id = Math.floor(Math.random() * 1000000).toString();
-  const post: BlogPost = { id, title, body, timestamp };
-  posts.push(post);
-  res.status(201).json(post);
+  const newPost: BlogPost = { id, title, body, timestamp };
+  posts.push(newPost);
+  res.status(201).json(newPost);
 };
 
 export const getOnePostById = async (req: Request, res: Response) => {
