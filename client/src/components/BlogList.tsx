@@ -1,15 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { BlogPost } from "./types/types";
 
 export const BlogList: React.FC = () => {
   const [posts, setPosts] = React.useState<BlogPost[]>([]);
 
   React.useEffect(() => {
-    axios.get("/posts").then((response) => {
-      setPosts(response.data);
-    });
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/posts");
+        const data = await response.json();
+        setPosts(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const showPosts = React.useCallback(() => {
