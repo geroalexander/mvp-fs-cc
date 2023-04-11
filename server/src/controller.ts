@@ -1,7 +1,13 @@
 import { Request, Response } from "express";
 import { BlogPost } from "./interfaces";
 
-let posts: BlogPost[] = [];
+let posts: BlogPost[] = [
+  { id: "1", title: "My First Post", body: "This is Wild", timestamp: 12334 },
+];
+
+export const getAllPosts = async (req: Request, res: Response) => {
+  res.json(posts);
+};
 
 export const createNewPost = async (req: Request, res: Response) => {
   const { title, body } = req.body;
@@ -10,10 +16,6 @@ export const createNewPost = async (req: Request, res: Response) => {
   const post: BlogPost = { id, title, body, timestamp };
   posts.push(post);
   res.status(201).json(post);
-};
-
-export const getAllPosts = async (req: Request, res: Response) => {
-  res.json(posts);
 };
 
 export const getOnePostById = async (req: Request, res: Response) => {
