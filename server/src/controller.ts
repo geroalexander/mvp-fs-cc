@@ -1,9 +1,7 @@
 import { Request, Response } from "express";
 import { BlogPost } from "./interfaces";
 
-let posts: BlogPost[] = [
-  { id: "1", title: "My First Post", body: "This is Wild", timestamp: 12334 },
-];
+let posts: BlogPost[] = [];
 
 export const getAllPosts = async (req: Request, res: Response) => {
   res.json(posts);

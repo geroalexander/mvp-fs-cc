@@ -23,29 +23,31 @@ export const BlogList: React.FC = () => {
   const showPosts = React.useCallback(() => {
     if (posts.length === 0) {
       return (
-        <div>
+        <div className="flex justify-center items-center flex-cols">
           <p>No posts yet!</p>
         </div>
       );
     }
     return (
-      <>
+      <div className="flex justify-center items-center flex-col">
         {posts.map((post) => (
-          <div key={post.id}>
+          <div key={post.id} className="justify-center">
             <Link to={`/posts/${post.id}`}>
               <Post {...post} />
             </Link>
           </div>
         ))}
-      </>
+      </div>
     );
   }, [posts]);
 
   return (
-    <div>
-      <h1>My Blog Posts</h1>
+    <div className="m-8 space-y-4">
+      <h1 className="flex justify-center font-bold text-2xl">My Blog Posts</h1>
       {showPosts()}
-      <Link to="/posts/new">Create a new post</Link>
+      <Link className="flex justify-center" to="/posts/new">
+        Create a new post
+      </Link>
     </div>
   );
 };

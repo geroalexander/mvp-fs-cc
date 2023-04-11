@@ -25,27 +25,37 @@ export const NewPost: React.FC = () => {
       console.error("Error creating new post:", error);
     }
   };
-
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="title">Title:</label>
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-6">
+      <div className="mb-4">
+        <label htmlFor="title" className="block text-gray-700 font-bold mb-2">
+          Title:
+        </label>
         <input
           type="text"
           id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
-      <div>
-        <label htmlFor="body">Body:</label>
+      <div className="mb-6">
+        <label htmlFor="body" className="block text-gray-700 font-bold mb-2">
+          Body:
+        </label>
         <textarea
           id="body"
           value={body}
           onChange={(e) => setBody(e.target.value)}
-        />
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        ></textarea>
       </div>
-      <button type="submit">Submit</button>
+      <button
+        type="submit"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Submit
+      </button>
     </form>
   );
 };
