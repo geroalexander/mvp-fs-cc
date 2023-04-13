@@ -17,5 +17,4 @@ The user can create a new post, view one post, and view all posts. They can also
 
 ### Tech Stack
 The backend is built using Express.js, while the frontend is built using React.js and TailwindCss.
-
-Thank you for using our application. If you have any questions, please do not hesitate to reach out.
+If you have any questions, please do not hesitate to reach out.
