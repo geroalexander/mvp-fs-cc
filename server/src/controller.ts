@@ -5,8 +5,6 @@ let posts: BlogPost[] = [];
 
 export const getAllPosts = async (req: Request, res: Response) => {
   if (posts.length === 0) {
-    res.status(404).json({ message: "No posts found." });
-  } else {
     res.json(posts);
   }
 };
