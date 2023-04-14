@@ -11,14 +11,8 @@ export const BlogList: React.FC = () => {
       try {
         const response = await fetch("http://localhost:5000/posts");
         const data = await response.json();
-        // console.log("data", data);
-        // if (data.message === "No posts found.") {
-        //   setPosts([]);
-        //   return;
-        // }
         setPosts(data);
       } catch (error) {
-        console.log("catch");
         setPosts([]);
       }
     };
